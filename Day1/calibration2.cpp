@@ -10,41 +10,53 @@ string updateLine(string line) {
     switch (line[i]) {
     case 'o':
       if (line[i + 1] == 'n' && line[i + 2] == 'e')
-        line[i] = line[i + 1] = line[i + 2] = '1';
+        line[i] = '1';
+      break;
     case 't':
       switch (line[i + 1]) {
       case 'w':
         if (line[i + 2] == 'o')
-          line[i] = line[i + 1] = line[i + 2] = '2';
+          line[i] = '2';
+        break;
       case 'h':
         if (line[i + 2] == 'r' && line[i + 3] == 'e' && line[i + 4] == 'e')
-          line[i] = line[i + 1] = line[i + 2] = line[i + 3] = line[i + 4] = '3';
+          line[i] = '3';
+        break;
       }
+      break;
     case 'f':
       switch (line[i + 1]) {
       case 'o':
         if (line[i + 2] == 'u' && line[i + 3] == 'r')
-          line[i] = line[i + 1] = line[i + 2] = line[i + 3] = '4';
+          line[i] = '4';
+        break;
       case 'i':
         if (line[i + 2] == 'v' && line[i + 3] == 'e')
-          line[i] = line[i + 1] = line[i + 2] = line[i + 3] = '5';
+          line[i] = '5';
+        break;
       }
+      break;
     case 's':
       switch (line[i + 1]) {
       case 'i':
         if (line[i + 2] == 'x')
-          line[i] = line[i + 1] = line[i + 2] = '6';
+          line[i] = '6';
+        break;
       case 'e':
         if (line[i + 2] == 'v' && line[i + 3] == 'e' && line[i + 4] == 'n')
-          line[i] = line[i + 1] = line[i + 2] = line[i + 3] = line[i + 4] = '7';
+          line[i] = '7';
+        break;
       }
+      break;
     case 'e':
       if (line[i + 1] == 'i' && line[i + 2] == 'g' && line[i + 3] == 'h' &&
           line[i + 4] == 't')
-        line[i] = line[i + 1] = line[i + 2] = line[i + 3] = line[i + 4] = '8';
+        line[i] = '8';
+      break;
     case 'n':
       if (line[i + 1] == 'i' && line[i + 2] == 'n' && line[i + 3] == 'e')
-        line[i] = line[i + 1] = line[i + 2] = line[i + 3] = '9';
+        line[i] = '9';
+      break;
     }
   }
   return line;
@@ -58,9 +70,9 @@ int main() {
   input.open("input.txt");
   if (input.is_open()) {
     while (getline(input, line)) {
-      cout << line << '\n';
+      // cout << line << '\n';
       line = updateLine(line);
-      cout << line << '\n';
+      //  cout << line << '\n';
       len = line.length();
       c = 0;
       for (int i = 0; i < len; i++) {

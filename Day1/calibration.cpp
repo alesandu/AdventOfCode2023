@@ -8,7 +8,7 @@ int main() {
   char add[2];
   string line;
   ifstream input;
-  input.open("del.txt");
+  input.open("input.txt");
   if (input.is_open()) {
     while (getline(input, line)) {
       cout << line << '\n';
