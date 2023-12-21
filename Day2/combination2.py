@@ -1,7 +1,9 @@
 idx = 0
 file = open("input.txt","r")
 for line in file:
-    check = 1
+    r = 0
+    b = 0
+    g = 0 
     games, cubes = line.strip("\n").split(":")
     listplays = cubes.split(";")
     for play in listplays:
@@ -9,12 +11,12 @@ for line in file:
         for cube in listcubes:
             num, color = cube.split()
             num = int(num)
-            if((color == "blue" and num>14)or(color == "green" and num>13)or(color == "red" and num >12)):
-                check = 0
-                break
-    if(check == 1):
-        game, id = games.split(" ")
-        print(id)
-        idx+=int(id)
+            if(color == "blue" and num > b):
+                b = num
+            elif(color == "green" and num > g):
+                g = num
+            elif(color == "red" and num > r):
+                r = num
+    idx+=r*b*g
 print(idx)
 file.close()
